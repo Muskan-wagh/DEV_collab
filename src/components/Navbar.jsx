@@ -11,12 +11,6 @@ export default function Navbar() {
                     DevCollab
                 </Link>
 
-                <div className="hidden md:flex items-center gap-10 text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                    <Link href="#features" className="hover:text-foreground transition-colors">Features</Link>
-                    <Link href="#solutions" className="hover:text-foreground transition-colors">Solutions</Link>
-                    <Link href="#pricing" className="hover:text-foreground transition-colors">Pricing</Link>
-                </div>
-
                 <div className="flex items-center gap-6">
                     <SignedOut>
                         <SignInButton mode="modal">

@@ -2,9 +2,22 @@ import { getProjects } from "@/app/actions/projects";
 import Link from "next/link";
 import { Plus, Folder, Users, Star } from "lucide-react";
 import CreateProjectButton from "@/components/CreateProjectButton";
+import { SignInButton } from "@clerk/nextjs";
 
 export default async function DashboardPage() {
     const { projects = [], error } = await getProjects();
+
+    if (error === 'Unauthorized') {
+        return (
+            <div className="flex flex-col items-center justify-center min-h-[60vh] text-center">
+                <h2 className="hero-heading text-3xl mb-4">Please sign in</h2>
+                <p className="text-muted-foreground mb-8">You need to be authenticated to view your projects.</p>
+                <SignInButton mode="modal">
+                    <button className="btn-primary px-10">Sign In</button>
+                </SignInButton>
+            </div>
+        );
+    }
 
     return (
         <div className="space-y-12">

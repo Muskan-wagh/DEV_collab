@@ -30,14 +30,14 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <SignedOut>
-              <SignUpButton mode="modal">
+              <SignUpButton mode="modal" forceRedirectUrl="/dashboard">
                 <button className="btn-primary w-full sm:w-auto text-lg shadow-sm">
                   Start for free
                 </button>
               </SignUpButton>
-              <SignInButton mode="modal">
+              <SignInButton mode="modal" forceRedirectUrl="/dashboard">
                 <button className="btn-secondary w-full sm:w-auto text-lg">
-                  View demo
+                  Start demo
                 </button>
               </SignInButton>
             </SignedOut>
@@ -87,18 +87,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className="py-24 border-t border-border">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-muted-foreground uppercase tracking-widest text-[10px] font-bold mb-12">Trusted by builders at</p>
-          <div className="flex flex-wrap justify-center items-center gap-16 opacity-30 grayscale contrast-125">
-            <span className="text-xl font-bold tracking-tighter">GITHUB</span>
-            <span className="text-xl font-bold tracking-tighter">VERCEL</span>
-            <span className="text-xl font-bold tracking-tighter">SUPABASE</span>
-            <span className="text-xl font-bold tracking-tighter">STRIPE</span>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
